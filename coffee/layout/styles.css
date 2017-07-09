@@ -1,0 +1,24 @@
+
+
+body {
+    /* extra padding for fixed navbars */
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+
+
+.welcome {
+    background-image: url(images/latte-carli-jeen-431-1900.jpg);
+    background-position: center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #FFF;
+    text-shadow: 2px 2px #333;
+    margin: 0;
+    padding: 100px;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    border-radius:0 !important;
+}

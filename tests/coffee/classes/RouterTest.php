@@ -36,4 +36,10 @@ class RouterTest extends UnitTestCase
         $this->assertEqual($route['component'], 'tests/create.inc.php');
 
     }
+
+    function testRouterNoRoute()
+    {
+        global $router;
+        $this->assertFalse($router->get_route('get', '/bogus'));
+    }
 }

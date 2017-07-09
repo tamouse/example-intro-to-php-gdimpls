@@ -20,15 +20,18 @@ class Router
 
     function get_route($method='', $path='')
     {
-        $route = $this->find_route($method, $path);
-        $params = $this->get_params($route, $path);
-        $component = $this->get_component($route);
+        if ($route = $this->find_route($method, $path)) {
+            $params = $this->get_params($route, $path);
+            $component = $this->get_component($route);
 
-        return [
-            'route' => $route,
-            'params' => $params,
-            'component' => $component
-        ];
+            return [
+                'route' => $route,
+                'params' => $params,
+                'component' => $component
+            ];
+        }
+
+        return false; // no route
     }
 
     function find_route($method='', $path='')
@@ -36,6 +39,7 @@ class Router
         foreach ($this->routes as $route) {
             if ($route->match_route($method, $path)) return $route;
         }
+        return false; // no route
     }
 
     function get_params($route, $path)
